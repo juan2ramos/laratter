@@ -12165,12 +12165,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        axios.get('api/notifications').then(function (response) {
-            console.log(response.data);
+        axios.get('/api/notifications').then(function (response) {
             _this.notifications = response.data;
 
-            Echo.private('App.User.' + _this.user).notifications(function (notifications) {
-                _this.notifications.unshift(notifications);
+            Echo.private('App.User.' + _this.user).notification(function (notification) {
+                _this.notifications.unshift(notification);
             });
         });
     }
@@ -12267,7 +12266,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(37);
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
   broadcaster: 'pusher',
-  key: 'a76f7dca1c3f40a23f4a'
+  key: '37fffd099f5b56adf24f'
 });
 
 /***/ }),

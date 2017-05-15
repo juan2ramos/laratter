@@ -14,17 +14,15 @@
             }
         },
         mounted() {
-            axios.get('api/notifications')
+            axios.get('/api/notifications')
                 .then(response => {
-                    console.log(response.data)
-                    this.notifications = response.data
+                    this.notifications = response.data;
 
                     Echo.private(`App.User.${this.user}`)
-                    .notifications(notifications =>{
-                        this.notifications.unshift(notifications)
-                    });
+                        .notification(notification => {
+                            this.notifications.unshift(notification);
+                        });
                 });
-
         }
     }
 </script>
