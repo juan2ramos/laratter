@@ -49,7 +49,7 @@
         ],
         "compile": [
             "php artisan migrate --force",
-            "php artisan storage:link --force"
+            "php artisan storage:link"
         ]
     },
     "config": {
